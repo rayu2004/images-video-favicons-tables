@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="author" content="Raiyaan Shakir" />
+
+  <title>Images, Video, Favicons, &amp; Tables</title>
+
+  <!-- Link to the provided CSS -->
+  <link rel="stylesheet" href="styles.css" />
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/x-icon" href="images/favicon.ico" />
+</head>
+
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <img src="images/logo-mark.svg" alt="" width="96" height="96" class="site-mark" />
+      <h1 class="site-title">Images, Video,<br>Favicons, &amp; Tables</h1>
+
+      <nav class="site-nav" aria-label="Section navigation">
+        <a href="#images">Images</a>
+        <a href="#video">Video</a>
+        <a href="#favicons">Favicons</a>
+        <a href="#svg">SVG</a>
+        <a href="#tables">Tables</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main-content">
+    <p class="lede">
+      Follow along as we learn about using images in HTML, adding a favicon to a website, adding SVGs to HTML,
+      adding a video to a web page, and creating a table with HTML.
+    </p>
+
+    <!-- =========================
+         ADDING IMAGES TO HTML
+         ========================= -->
+    <section id="images">
+      <h2>Adding Images to Your HTML</h2>
+
+      <p>
+        There are a couple of reasons for adding images to your HTML. One reason is that you would like to add an image for decoration.
+        The other reason is because you have images that are necessary content, and if you remove them from the page the user would be
+        missing needed information.
+      </p>
+
+      <p>
+        Images have two required attributes: <code>src</code>, which tells the browser where the image is and should
+        use a relative link, and <code>alt</code>, which uses text to describe the image so that you could imagine
+        what it looks like if you can't see it. Remember that if your image has any text in it, you have to include
+        that in the alt text. It is also important to add the height and width attributes to help the page layout
+        while loading.
+      </p>
+
+      <h3><span aria-hidden="true">✱</span> Adding Decorative Images to HTML</h3>
+      <p>
+        Decorative images should have an empty <code>alt</code> attribute so that screen readers skip them.
+        You can't leave the attribute off completely — it must be empty.
+      </p>
+
+      <figure class="example-figure">
+        <img src="images/decorative-abstract.jpg" alt="" width="600" height="450">
+        <figcaption>
+          Photo by <a href="https://unsplash.com/@usgs">USGS</a> on
+          <a href="https://unsplash.com">Unsplash</a>
+        </figcaption>
+      </figure>
+
+      <h3><span aria-hidden="true">✱</span> Adding Images as Content in HTML</h3>
+      <p>
+        For images that are content, you must use descriptive <code>alt</code> text and the correct width and height.
+      </p>
+
+      <figure class="example-figure">
+        <img
+          src="images/memphis-recording-service.jpg"
+          alt="Neon sign reading 'Memphis Recording Service' in red, blue, and white."
+          width="600"
+          height="750">
+        <figcaption>
+          Photo by <a href="https://unsplash.com/@uweconrad">Uwe Conrad</a> on
+          <a href="https://unsplash.com">Unsplash</a>
+        </figcaption>
+      </figure>
+    </section>
+
+    <!-- =========================
+         ADDING VIDEO TO HTML
+         ========================= -->
+    <section id="video">
+      <h2>Adding Video to Your HTML</h2>
+
+      <p>
+        Many sites today use video, as it is something audiences prefer. You can use multiple sources to allow the browser to
+        play the one it supports best. You should use relative links for your local videos.
+      </p>
+
+      <h3><span aria-hidden="true">✱</span> Using HTML5 to Add a Video</h3>
+      <p>
+        The video below is included in the <code>video</code> folder for this project.
+      </p>
+
+      <video controls width="640" poster="images/video-poster.jpg">
+        <source src="video/sample-clip.mp4" type="video/mp4">
+        Sorry, your browser doesn’t support embedded video.
+      </video>
+
+      <p>
+        <a href="#" rel="noopener">Video by Caleb Oquendo</a>
+      </p>
+
+      <h3><span aria-hidden="true">✱</span> Adding Video From YouTube</h3>
+      <p>
+        You can embed YouTube videos by copying the embed code found under Share → Embed.
+      </p>
+
+      <div class="youtube-wrap">
+        <iframe
+          width="640"
+          height="360"
+          src="https://www.youtube.com/embed/SesameStreetVideoID"
+          title="YouTube video player"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          allowfullscreen>
+        </iframe>
+      </div>
+    </section>
+
+    <!-- =========================
+         FAVICONS
+         ========================= -->
+    <section id="favicons">
+      <h2>Adding a Favicon to Your Web Page</h2>
+      <p>
+        A favicon helps users recognize your site in their browser tabs or bookmarks. You can use
+        <a href="https://favicon.io/" target="_blank">favicon.io</a> or another generator to create one.
+      </p>
+    </section>
+
+    <!-- =========================
+         SVG SECTION
+         ========================= -->
+    <section id="svg">
+      <h2>Using SVGs in HTML</h2>
+
+      <p>
+        SVGs are scalable vector graphics that look sharp on any screen size. They can be embedded directly into HTML
+        or linked like normal images. We'll use them in the footer below.
+      </p>
+    </section>
+
+    <!-- =========================
+         TABLE SECTION
+         ========================= -->
+    <section id="tables">
+      <h2>Using Tables in HTML</h2>
+
+      <p>
+        Tables are used for structured data, such as schedules. Each table should have a <code>&lt;caption&gt;</code>
+        and use <code>scope</code> attributes for accessibility.
+      </p>
+
+      <table>
+        <caption>Hours of Operation</caption>
+        <thead>
+          <tr>
+            <th scope="col">Day</th>
+            <th scope="col">Hours</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><th scope="row">Monday</th><td>Noon - 8:00PM</td></tr>
+          <tr><th scope="row">Tuesday</th><td>10:00AM - 7:00PM</td></tr>
+          <tr><th scope="row">Wednesday</th><td><em>Closed</em></td></tr>
+          <tr><th scope="row">Thursday</th><td>10:00AM - 7:00PM</td></tr>
+          <tr><th scope="row">Friday</th><td>Noon - Midnight</td></tr>
+          <tr><th scope="row">Saturday</th><td><strong>Closed</strong><br><small>By Appointment Only</small></td></tr>
+          <tr><th scope="row">Sunday</th><td><em>Closed</em></td></tr>
+        </tbody>
+      </table>
+    </section>
+  </main>
+
+  <!-- =========================
+         FOOTER
+         ========================= -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <h2 class="footer-heading">Follow Us on Social Media</h2>
+
+      <nav class="social-links" aria-label="Social media">
+        <a href="#" aria-label="Facebook">
+          <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none"
+               stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M7 10v4h3v7h4v-7h3l1-4h-4V8a1 1 0 0 1 1-1h3V3h-3a5 5 0 0 0-5 5v2H7"/>
+          </svg>
+        </a>
+
+        <a href="#" aria-label="Instagram">
+          <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none"
+               stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="4" y="4" width="16" height="16" rx="4" />
+            <circle cx="12" cy="12" r="3" />
+            <path d="M16.5 7.5v.001" />
+          </svg>
+        </a>
+
+        <a href="#" aria-label="Twitter">
+          <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none"
+               stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M4 4l16 16" />
+            <path d="M20 4l-7.5 7.5" />
+            <path d="M8.5 12.5l-5.5 5.5" />
+          </svg>
+        </a>
+      </nav>
+    </div>
+
+    <p class="copyright">&copy; <span id="year"></span> Raiyaan Shakir</p>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
